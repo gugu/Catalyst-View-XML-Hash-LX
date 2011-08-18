@@ -6,7 +6,7 @@ author   'Andrii Kostenko <andrey@kostenko.name>';
 license  'perl';
 
 requires 'Catalyst::View';
-requires 'XML::Hash::LX';
+requires 'XML::Hash::LX' => '0.0602';
 requires 'namespace::clean';
 
 test_requires 'Test::More';

@@ -13,11 +13,11 @@ Catalyst::View::XML::Hash::LX - Serialize the stash as XML using XML::Hash::LX
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -37,14 +37,22 @@ This Catalyst view renders the context stash as XML using L<XML::Hash::LX>.  Thi
 to quickly render customized XML output using a set of rules to dictate which hash parameters will be stored
 as attributes, elements, and other configuration options.
 
+=head1 METHODS
+
+=head2 process
+
+See L<Catalyst::View::process>
+
 =cut
 
 sub process {
     my ($self, $c) = @_;
 
-    my $content = hash2xml $c->stash->{response};
+    my $encoding = $c->stash->{encoding} // 'utf-8';
 
-    $c->response->content_type("text/xml");
+    my $content = hash2xml $c->stash->{response}, encoding => $encoding;
+
+    $c->response->content_type("text/xml; charset=" . $encoding);
     $c->response->body($content);
     1;
 }

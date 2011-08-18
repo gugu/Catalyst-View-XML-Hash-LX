@@ -1,7 +1,7 @@
-Revision history for Catalyst-View-XML-Generator
+Revision history for Catalyst-View-XML-Hash-LX
 
-0.02  2009-09-06 10:47:00 PDT
-    Fixed output handling to not go to STDOUT
+0.02    Tue Aug 18 20:23:27 MSD 2011
+    Added encoding support
 
-0.01  2009-09-02 17:28:00 PDT
+0.01  2011-08-02 17:28:00 PDT
     Initial revision
